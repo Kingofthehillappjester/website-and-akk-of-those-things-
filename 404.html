@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page not found | King of the Hill</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,300;0,400;1,300;1,400&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#09090C;color:#F4F1EB;font-family:'Hanken Grotesk',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+header{padding:26px 40px}
+.logo{font-family:'Noto Serif Display',Georgia,serif;font-size:17px;letter-spacing:.22em;text-transform:uppercase;color:#F4F1EB;text-decoration:none}
+main{flex:1;display:flex;align-items:center;padding:40px}
+.wrap{max-width:1100px;margin:0 auto;width:100%}
+.k{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:#C49A3C;font-weight:600;margin-bottom:20px}
+h1{font-family:'Noto Serif Display',Georgia,serif;font-weight:300;font-size:clamp(46px,7vw,92px);line-height:1;letter-spacing:-.02em;margin-bottom:24px}
+h1 em{font-style:italic;color:#D4AF5A;display:block}
+p{color:#9E9890;font-size:16px;line-height:1.7;max-width:52ch;margin-bottom:36px}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;border:1px solid #C49A3C;color:#C49A3C;text-decoration:none;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.btn.p{background:#C49A3C;color:#09090C}
+.btn:hover{background:#D4AF5A;border-color:#D4AF5A;color:#09090C}
+.trips{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(244,241,235,.1)}
+.trips a{padding:22px;text-decoration:none;color:#F4F1EB;border-right:1px solid rgba(244,241,235,.1)}
+.trips a:last-child{border-right:0}
+.trips a:hover{background:#0E1117}
+.trips b{display:block;font-family:'Noto Serif Display',Georgia,serif;font-weight:400;font-size:19px;line-height:1.2;margin-bottom:6px}
+.trips span{font-size:12px;color:#6B6B6B}
+@media(max-width:860px){.trips{grid-template-columns:1fr 1fr}.trips a:nth-child(2){border-right:0}.trips a:nth-child(-n+2){border-bottom:1px solid rgba(244,241,235,.1)}}
+@media(max-width:520px){header,main{padding-left:22px;padding-right:22px}.trips{grid-template-columns:1fr}.trips a{border-right:0;border-bottom:1px solid rgba(244,241,235,.1)}.btn{flex:1}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="/">King of the Hill</a></header>
+<main>
+  <div class="wrap">
+    <p class="k">404 &middot; Page not found</p>
+    <h1>Wrong line.<em>Let&rsquo;s get you back on track.</em></h1>
+    <p>This page doesn&rsquo;t exist, or it has moved. Every King of the Hill expedition is listed below.</p>
+    <div class="btns">
+      <a class="btn p" href="/">See all trips</a>
+      <a class="btn" href="/#find">Find your trip</a>
+    </div>
+    <nav class="trips" aria-label="Trips">
+      <a href="/learn-to-ski-tour-himalayas"><b>Learn to Ski Tour the Himalayas</b><span>4,130m &middot; from &pound;4,950</span></a>
+      <a href="/annapurna-ski-expedition"><b>Annapurna Ski Expedition</b><span>5,416m &middot; from &pound;13,500</span></a>
+      <a href="/mera-peak-ski-expedition"><b>Mera Peak Ski Expedition</b><span>6,476m &middot; from &pound;8,950</span></a>
+      <a href="/himlung-himal-ski-expedition"><b>Himlung Himal Ski Expedition</b><span>7,126m &middot; from &pound;11,950</span></a>
+    </nav>
+  </div>
+</main>
+</body>
+</html>

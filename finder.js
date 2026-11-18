@@ -3,10 +3,10 @@
   var form=document.getElementById('finder'), out=document.getElementById('finderResult');
   if(!form||!out) return;
   var T={
-    learn:{name:'Learn to Ski Tour the Himalayas',url:'/learn-to-ski-tour-himalayas',meta:'14 days &middot; 4,130m &middot; from &pound;4,950'},
-    anna:{name:'Annapurna Ski Expedition',url:'/annapurna-ski-expedition',meta:'10 days &middot; 5,416m &middot; from &pound;13,500'},
-    mera:{name:'Mera Peak Ski Expedition',url:'/mera-peak-ski-expedition',meta:'18 days &middot; 6,476m &middot; from &pound;8,950'},
-    him:{name:'Himlung Himal Ski Expedition',url:'/himlung-himal-ski-expedition',meta:'About 30 days &middot; 7,126m &middot; from &pound;11,950'}
+    learn:{name:'Learn to Ski Tour the Himalayas',url:'learn-to-ski-tour-himalayas',meta:'14 days &middot; 4,130m &middot; from &pound;4,950'},
+    anna:{name:'Annapurna Ski Expedition',url:'annapurna-ski-expedition',meta:'10 days &middot; 5,416m &middot; from &pound;13,500'},
+    mera:{name:'Mera Peak Ski Expedition',url:'mera-peak-ski-expedition',meta:'18 days &middot; 6,476m &middot; from &pound;8,950'},
+    him:{name:'Himlung Himal Ski Expedition',url:'himlung-himal-ski-expedition',meta:'About 30 days &middot; 7,126m &middot; from &pound;11,950'}
   };
   function val(n){ var el=form.querySelector('input[name="'+n+'"]:checked'); return el?el.value:null; }
   function link(k,txt){ return '<a href="'+T[k].url+'">'+(txt||T[k].name)+'</a>'; }
