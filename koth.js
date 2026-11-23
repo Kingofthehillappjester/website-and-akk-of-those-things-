@@ -38,6 +38,8 @@
       done=document.getElementById('cfDone'), status=document.getElementById('cfStatus');
   if(dlg&&form){
     var ENDPOINT='https://formsubmit.co/ajax/info@kingofthehill.co.uk';
+    // Also send each enquiry to the KOTH enquiry desk. Best effort: the email above still goes either way.
+    var DESK='https://koth-enquiry-desk.vercel.app/api/intake';
     var last=null, trip=form.elements.trip;
     function open(e){
       if(e) e.preventDefault();
@@ -69,6 +71,11 @@
       var data={ name:f.name.value.trim(), phone:f.phone.value.trim(), trip:tripLabel(), message:f.message.value.trim(),
         _subject:'Website enquiry ('+tripLabel()+'): '+f.name.value.trim(), _template:'table', _captcha:'false' };
       if(f.email.value.trim()){ data.email=f.email.value.trim(); data._replyto=data.email; }
+      try{
+        var desk={ name:data.name, phone:data.phone, trip:(trip&&trip.value)||'', message:data.message, page:location.pathname };
+        if(data.email) desk.email=data.email;
+        fetch(DESK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(desk),keepalive:true}).catch(function(){});
+      }catch(err){}
       fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
         .then(function(r){ return r.json().then(function(j){ if(!r.ok || String(j.success)!=='true') throw 0; }); })
         .then(function(){ form.reset(); form.hidden=true; done.hidden=false; done.querySelector('[data-close].book-btn').focus(); })
